@@ -1,7 +1,9 @@
-
+import 'package:flutter/material.dart';
+import 'package:forkfyapp/http/webclients/recipies_webclient.dart';
+import '../screens/home.dart';
 
 class SearchField extends StatelessWidget {
-  const SearchField({Key? key}) : super(key: key);
+  SearchField({Key? key}) : super(key: key);
   final RecipiesWebClient _recipiesWebClient = RecipiesWebClient();
   final TextEditingController _recipiesSearchController = TextEditingController();
 
@@ -23,7 +25,9 @@ class SearchField extends StatelessWidget {
             ),
             controller: _recipiesSearchController,
             onChanged: (text) {
-              RecipiesList(text);
+              _recipiesWebClient.findRecipesBySearchTerm(text).then((recipies) =>
+              {debugPrint(recipies.toString())});
+
             },
           ),
         ],

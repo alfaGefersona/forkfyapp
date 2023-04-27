@@ -1,18 +1,15 @@
-import 'package:http/http.dart';
 import 'dart:convert';
-import 'dart:developer';
 import 'package:forkfyapp/configs/constants.dart';
+import 'package:http/http.dart';
+import '../../models/recipie_response.dart';
 
 class RecipiesWebClient {
 
-
-  Future<dynamic> findRecipesBySearchTerm (String searchTerm) async{
-    var uri = Uri.https(baseUrl, endpointUrl, {'search': '${searchTerm}'});
+  Future<ApiResponse> findRecipesBySearchTerm (String searchTerm) async{
+    final uri = Uri.https(baseUrl, endpointUrl, {'search': '${searchTerm}'});
     final Response response = await get(uri);
-    log('${response.body}');
-    return response.body;
+    return ApiResponse.fromJson(jsonDecode(response.body));
   }
-
 
 
 }

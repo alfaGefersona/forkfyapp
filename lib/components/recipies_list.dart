@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:forkfyapp/models/recipies.dart';
+import 'package:forkfyapp/models/recipe.dart';
 import 'package:forkfyapp/http/webclients/recipies_webclient.dart';
 import 'package:forkfyapp/components/loading_progress.dart';
 
@@ -25,7 +25,7 @@ class RecipiesList extends StatelessWidget {
                 break;
               case ConnectionState.done:
                 if( snapshot.hasData ) {
-                  final List<Recipies> recipies = snapshot.data;
+                  final List<Recipe> recipies = snapshot.data;
                   print(recipies);
                 }
                 print(snapshot);
