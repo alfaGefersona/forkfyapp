@@ -1,6 +1,6 @@
 # forkfyapp
 
-A new Flutter project.
+Flutter project to studies 
 
 ## Getting Started
 

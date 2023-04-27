@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:forkfyapp/screens/home.dart';
+import 'package:forkfyapp/components/loading_progress.dart';
 
 
 void main() {

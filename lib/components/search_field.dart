@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:forkfyapp/http/webclients/recipies_webclient.dart';
-import 'dart:developer';
-import 'package:forkfyapp/components/recipies_list.dart';
 
-class Home extends StatelessWidget {
+
+class SearchField extends StatelessWidget {
+  const SearchField({Key? key}) : super(key: key);
   final RecipiesWebClient _recipiesWebClient = RecipiesWebClient();
   final TextEditingController _recipiesSearchController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,27 +23,9 @@ class Home extends StatelessWidget {
             ),
             controller: _recipiesSearchController,
             onChanged: (text) {
-               RecipiesList(text);
-              },
+              RecipiesList(text);
+            },
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class AppBarTitle extends StatelessWidget {
-  const AppBarTitle({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Icon(Icons.menu),
-          Text('Recipies App'),
-          Icon(Icons.info),
         ],
       ),
     );
